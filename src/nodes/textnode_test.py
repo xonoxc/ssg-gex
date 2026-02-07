@@ -1,5 +1,3 @@
-import unittest
-
 from nodes.textnode import TextNode, TextType
 
 
@@ -14,7 +12,3 @@ class TestTextNode:
         node2 = TextNode("This is a text node", TextType.PLAIN)
 
         assert node2 != node
-
-
-if __name__ == "__main__":
-    unittest.main()
