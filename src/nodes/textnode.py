@@ -1,5 +1,4 @@
 from enum import Enum
-from typing import Self
 
 
 class TextType(Enum):
@@ -16,8 +15,9 @@ class TextNode:
     text_type: TextType
     url: str | None
 
+    # constrcutor
     def __init__(
-        self: Self,
+        self,
         text: str,
         text_type: TextType,
         url: str | None = None,
@@ -26,7 +26,9 @@ class TextNode:
         self.text_type = text_type
         self.url = url
 
-    def __eq__(self: Self, value: object) -> bool:
+    # equality check operators enabled classinstanc1 == classinstance2 check for
+    # testing
+    def __eq__(self, value: object) -> bool:
         return (
             (
                 self.text == value.text
@@ -37,5 +39,6 @@ class TextNode:
             else NotImplemented
         )
 
-    def __repr__(self: Self) -> str:
+    # returns a string reperesntation of the class
+    def __repr__(self) -> str:
         return f"TextNode({self.text},{self.text_type.value},{self.url})"

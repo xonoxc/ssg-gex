@@ -1,18 +1,19 @@
 import unittest
 
-from textnode import TextNode, TextType
+from nodes.textnode import TextNode, TextType
 
 
-class TestTextNode(unittest.TestCase):
+class TestTextNode:
     def test_eq(self) -> None:
         node = TextNode("This is a text node", TextType.BOLD_TEXT)
         node2 = TextNode("This is a text node", TextType.BOLD_TEXT)
-        self.assertEqual(node, node2)
+        assert node == node2
 
     def test_not_eq(self) -> None:
         node = TextNode("This is a text node", TextType.BOLD_TEXT)
         node2 = TextNode("This is a text node", TextType.PLAIN)
-        self.assertNotEqual(node, node2)
+
+        assert node2 != node
 
 
 if __name__ == "__main__":
