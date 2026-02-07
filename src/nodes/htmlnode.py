@@ -1,11 +1,11 @@
-from typing import List
+from typing import List, Dict
 
 
 class HTMLNode:
     tag: str | None
     value: str | None
     children: List["HTMLNode"] | None
-    props: dict[str, str] | None
+    props: Dict[str, str] | None
 
     # constrcutor
     def __init__(
@@ -13,7 +13,7 @@ class HTMLNode:
         tag: str | None,
         value: str | None,
         children: List["HTMLNode"] | None,
-        props: dict[str, str] | None,
+        props: Dict[str, str] | None,
     ) -> None:
         self.tag = tag
         self.value = value
@@ -29,11 +29,11 @@ class HTMLNode:
 
         props_str = ""
         if self.props:
-            props_str = self.porps_to_html()
+            props_str = self.stringified_props()
 
         children_str = ""
         if self.children:
-            children_str = "".join(child.to_html() for child in self.children)
+            children_str = self.stringified_children()
 
         # Include value if it exists, after children
         content_str = children_str
@@ -45,11 +45,16 @@ class HTMLNode:
             content_str,
         )
 
-    # converts the props i.e attributes key value pairs to string reperations
-    def porps_to_html(self) -> str:
+    # helper method to convert props dict to string
+    def stringified_props(self) -> str:
         if not self.props:
             return ""
         return " " + " ".join(f'{key}="{value}"' for key, value in self.props.items())
+
+    def stringified_children(self) -> str:
+        if not self.children:
+            return ""
+        return "".join(child.to_html() for child in self.children)
 
     # return final tag string reperation
     def to_string_rep(
@@ -58,3 +63,9 @@ class HTMLNode:
         children_str: str,
     ) -> str:
         return f"<{self.tag}{props_str}>{children_str}</{self.tag}>"
+
+    # string representation of the node, for debugging purposes
+    def __repr__(self) -> str:
+        return self.to_string_rep(
+            props_str=self.stringified_props(), children_str=self.stringified_children()
+        )

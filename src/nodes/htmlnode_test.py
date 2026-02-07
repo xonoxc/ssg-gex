@@ -112,34 +112,34 @@ def test_to_html_complex_node(complex_node: HTMLNode) -> None:
     assert complex_node.to_html() == expected
 
 
-def test_props_to_html() -> None:
-    """Test props_to_html method converts props dict to HTML attributes string."""
+def test_stringified_props() -> None:
+    """Test stringified_props method converts props dict to HTML attributes string."""
     node: HTMLNode = HTMLNode("div", None, None, {"class": "test", "id": "example"})
     expected: str = ' class="test" id="example"'
-    assert node.porps_to_html() == expected
+    assert node.stringified_props() == expected
 
 
-def test_props_to_html_empty_props() -> None:
-    """Test props_to_html with empty props dict."""
+def test_stringified_props_empty_props() -> None:
+    """Test stringified_props with empty props dict."""
     node: HTMLNode = HTMLNode("div", None, None, {})
     expected: str = ""
-    assert node.porps_to_html() == expected
+    assert node.stringified_props() == expected
 
 
-def test_props_to_html_none_props() -> None:
-    """Test props_to_html with None props."""
+def test_stringified_props_none_props() -> None:
+    """Test stringified_props with None props."""
     node: HTMLNode = HTMLNode("div", None, None, None)
     expected: str = ""
-    assert node.porps_to_html() == expected
+    assert node.stringified_props() == expected
 
 
-def test_props_to_html_special_characters() -> None:
-    """Test props_to_html with special characters in values."""
+def test_stringified_props_special_characters() -> None:
+    """Test stringified_props with special characters in values."""
     node: HTMLNode = HTMLNode(
         "div", None, None, {"data-value": "test&special", "title": 'Quote"Test'}
     )
     expected: str = ' data-value="test&special" title="Quote"Test"'
-    assert node.porps_to_html() == expected
+    assert node.stringified_props() == expected
 
 
 def test_to_string_rep() -> None:
