@@ -1,5 +1,5 @@
 from typing import Dict, override
-from .htmlnode import HTMLNode
+from nodes.htmlnode import HTMLNode
 
 
 # this is a leaf node that does not contain
@@ -12,7 +12,7 @@ class LeafNode(HTMLNode):
         self,
         tag: str | None,
         value: str,
-        props: Dict[str, str] | None,
+        props: Dict[str, str] | None = None,
     ) -> None:
         super().__init__(
             tag,
