@@ -5,13 +5,10 @@ from nodes.htmlnode import HTMLNode
 # this is a leaf node that does not contain
 # another HTMLnode, it only contains a value, and it does not have a tag or props
 class LeafNode(HTMLNode):
-    tag: str | None
-    value: str
-
     def __init__(
         self,
-        tag: str | None,
         value: str,
+        tag: str | None = None,
         props: Dict[str, str] | None = None,
     ) -> None:
         super().__init__(
