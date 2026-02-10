@@ -1,9 +1,12 @@
-from nodes.textnode import TextNode, TextType
+from utils.files.managers import cleanup_dir, copy_dir_contents
+from constants import DEST_STATIC_DIR_PATH, SOURCE_STATIC_DIR_PATH
 
 
 def main() -> None:
-    new_text_node = TextNode(text="some text", text_type=TextType.PLAIN)
-    print(new_text_node)
+    cleanup_dir(
+        DEST_STATIC_DIR_PATH,
+    )
+    copy_dir_contents(src=SOURCE_STATIC_DIR_PATH, dest=DEST_STATIC_DIR_PATH)
 
 
 if __name__ == "__main__":
