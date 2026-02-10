@@ -15,9 +15,9 @@ def test_inline_formatting():
         TextNode("this is ", TextType.PLAIN),
         TextNode("bold", TextType.BOLD_TEXT),
         TextNode(" and ", TextType.PLAIN),
-        TextNode("italic", TextType.BOLD_TEXT),
+        TextNode("italic", TextType.ITALIC_TEXT),
         TextNode(" and ", TextType.PLAIN),
-        TextNode("code", TextType.BOLD_TEXT),
+        TextNode("code", TextType.CODE_TEXT),
     ]
 
 

@@ -11,11 +11,11 @@ def text_to_nodes(text: str) -> List[TextNode]:
         "**",
         TextType.BOLD_TEXT,
     )
-    nodes = split_nodes_delemeter(nodes, "_", TextType.BOLD_TEXT)
+    nodes = split_nodes_delemeter(nodes, "_", TextType.ITALIC_TEXT)
     nodes = split_nodes_delemeter(
         nodes,
         "`",
-        TextType.BOLD_TEXT,
+        TextType.CODE_TEXT,
     )
 
     nodes = split_asset_nodes(nodes, asset_type=AssetType.IMAGE)
