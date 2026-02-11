@@ -1,4 +1,4 @@
-from generators.page_gen import generate_page
+from generators.page_gen import generate_page_rec
 from utils.files.managers import cleanup_dir, copy_dir_contents
 
 from constants import (
@@ -13,10 +13,10 @@ def build() -> None:
     print("setting up static assets")
 
     print("Initializing build......")
-    generate_page(
-        from_path=CONTENT_DIR_PATH / "index.md",
+    generate_page_rec(
         template_path=TEMPLATE_FILE_PATH,
-        dest_path=DEST_STATIC_DIR_PATH,
+        content_dir_path=CONTENT_DIR_PATH,
+        dest_dir_path=DEST_STATIC_DIR_PATH,
     )
     print("Build successfull!!")
 

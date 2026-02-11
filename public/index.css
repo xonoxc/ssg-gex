@@ -146,13 +146,11 @@ img {
 
 .left-panel {
   left: 0;
-  transform: translateX(-3.5rem); /* adjust if needed */
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .right-panel {
   right: 0;
-  transform: translateX(3.5rem);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 

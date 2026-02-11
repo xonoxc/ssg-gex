@@ -5,6 +5,26 @@ from utils.extract_title import extract_title_h1
 from utils.markdown_to_html_nodes import markdown_to_html_nodes
 
 
+def generate_page_rec(
+    template_path: Path,
+    dest_dir_path: Path,
+    content_dir_path: Path,
+) -> None:
+    for item in content_dir_path.iterdir():
+        if item.is_file() and item.suffix == ".md":
+            generate_page(
+                from_path=item,
+                template_path=template_path,
+                dest_path=dest_dir_path,
+            )
+        elif item.is_dir():
+            generate_page_rec(
+                content_dir_path=item,
+                template_path=template_path,
+                dest_dir_path=dest_dir_path / item.name,
+            )
+
+
 def generate_page(from_path: Path, template_path: Path, dest_path: Path) -> None:
     print(f"Generating pages from {from_path} to {dest_path}.....")
 
@@ -30,10 +50,11 @@ def generate_page(from_path: Path, template_path: Path, dest_path: Path) -> None
     )
 
     destination_file_path = dest_path / from_path.with_suffix(".html").name
-    destination_file_path.write_text(
-        generated_html,
-        encoding="utf-8",
+    destination_file_path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
     )
+    destination_file_path.write_text(generated_html, encoding="utf-8")
 
 
 # varaible pattern {{ varaible }} matches the names
