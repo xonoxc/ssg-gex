@@ -27,7 +27,7 @@ A clean, type-safe static site generator built with modern Python 3.13. SSG-GEX 
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/ssg-gex.git
+git clone https://github.com/xonoxc/ssg-gex.git
 cd ssg-gex
 
 # Create virtual environment
@@ -206,7 +206,7 @@ We welcome contributions! Please follow these guidelines:
 
 ```bash
 # Clone your fork
-git clone https://github.com/your-username/ssg-gex.git
+git clone https://github.com/xonoxc/ssg-gex.git
 cd ssg-gex
 
 # Set up development environment
@@ -246,14 +246,6 @@ Perfect for developers who want a modern, type-safe approach to static site gene
 - **Dependencies**: Minimal (pytest only)
 - **License**: MIT
 
-## Links
-
-- [Documentation](https://github.com/your-username/ssg-gex/wiki)
-- [Issue Tracker](https://github.com/your-username/ssg-gex/issues)
-- [Discussions](https://github.com/your-username/ssg-gex/discussions)
-- [PyPI Package](https://pypi.org/project/ssg-gex/)
-
----
 
 <div align="center">
 
