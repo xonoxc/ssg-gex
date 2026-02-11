@@ -3,7 +3,7 @@
 ![JRR Tolkien chillin’ like a wizard boss](/tolkien.png)
 
 Alright listen up — I love Tolkien like it’s oxygen.  
-Not just a casual hobby. Like *if Tolkien had a dating profile it would have more matches than me*. 💀🔥
+Not just a casual hobby. Like **if Tolkien had a dating profile it would have more matches than me**. 💀🔥
 
 > “I am in fact a Hobbit in all but size.”  
 > — Tolkien probably flexing on everyone

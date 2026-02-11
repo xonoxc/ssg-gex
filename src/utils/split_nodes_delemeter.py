@@ -1,5 +1,4 @@
 from typing import List
-from nodes.htmlnode import HTMLNode
 from errors.syntax import MarkdownSyntaxError
 from nodes.textnode import TextNode, TextType
 
@@ -8,7 +7,7 @@ def split_nodes_delemeter(
     old_nodes: List[TextNode],
     delemeter: str,
     text_type: TextType,
-) -> List[HTMLNode]:
+) -> List[TextNode]:
     new_nodes = []
 
     for node in old_nodes:

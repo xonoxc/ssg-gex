@@ -13,7 +13,12 @@ def generate_page(from_path: Path, template_path: Path, dest_path: Path) -> None
     )
     template_content = readfile(file_path=template_path)
 
-    page_title = extract_title_h1(markdown_content)
+    page_title = ""
+    try:
+        page_title = extract_title_h1(markdown_content)
+    except Exception as e:
+        print(e)
+
     html_content = markdown_to_html_nodes(markdown=markdown_content).to_html()
 
     generated_html = inject_variables(

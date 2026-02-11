@@ -3,7 +3,7 @@ def extract_title_h1(markdown: str) -> str:
     markdownlines = markdown.strip().splitlines()
 
     for line in markdownlines:
-        if line.startswith("# "):
-            return line.strip("#").strip()
+        if line.strip().startswith("# "):
+            return line.strip("# ").strip()
 
-    raise FileNotFoundError("title string not found")
+    raise Exception("title string not found")
